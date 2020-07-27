@@ -15,18 +15,20 @@ import requests
 
 api_routes = Blueprint("api_routes", __name__)
 
+
 def safe_paths():
     '''
     Quick helper to make platform independant file paths
     Returns - (df, data)
     '''
-    model_path = os.path.join('data',
+    model_path = os.path.join('..', ''data',
                               'knn_pipeline.joblib')
 
-    df_path = os.path.join('data',
+    df_path = os.path.join('..', 'data',
                            'song_list.joblib')
 
     return (model_path, df_path)
+
 
 def load_models():
     '''
@@ -40,7 +42,9 @@ def load_models():
 
     return (pickled_model, pickled_df)
 
+
 PICKLED_MODEL, PICKLED_DF = load_models()
+
 
 def lookup_song(track_id):
     """
