@@ -49,7 +49,7 @@ def process_json():
     # pyld = request.get_json()
     print(f'Payload: {sent_track_id}')
 
-    # print('Preprocessing payload')
+    # print('processig and recommending basd on payload')
     # preprocessed = clean_payload(pyld)
     #
     #
