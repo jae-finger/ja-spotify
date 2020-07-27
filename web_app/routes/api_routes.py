@@ -6,12 +6,12 @@ import joblib
 import os
 import requests
 
-# *************************************************************************** #
-# Activating CORS
-app = Flask(__name__)
-app.config['CORS_HEADERS'] = 'Content-Type'
-cors = CORS(app)
-# *************************************************************************** #
+# # *************************************************************************** #
+# # Activating CORS
+# app = Flask(__name__)
+# app.config['CORS_HEADERS'] = 'Content-Type'
+# cors = CORS(app)
+# # *************************************************************************** #
 
 api_routes = Blueprint("api_routes", __name__)
 
