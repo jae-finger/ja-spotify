@@ -90,9 +90,9 @@ def deliver(song_list):
 @cross_origin()
 # @api_routes.route('/send')
 def process_json():
-    sent_track_id = '{"track_id": "3J2Jpw61sO7l6Hc7qdYV91"}'
-    sent_track_id = json.loads(sent_track_id)
-    # sent_track_id = request.get_json()
+    # sent_track_id = '{"track_id": "3J2Jpw61sO7l6Hc7qdYV91"}'
+    # sent_track_id = json.loads(sent_track_id)
+    sent_track_id = request.get_json()
     sent_track_id = sent_track_id['track_id']
     print('Fetching payload')
     # pyld = request.get_json()
