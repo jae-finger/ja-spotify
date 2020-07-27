@@ -82,7 +82,8 @@ def process_json():
     #     json.dumps(clean_recs, sort_keys=False, indent=4),
     #     mimetype=app.config['JSONIFY_MIMETYPE']
     # )
-    return sent_track_id
+    # return sent_track_id
+    return f'{sent_track_id'
 
 @api_routes.route('/')
 def hello_world():
