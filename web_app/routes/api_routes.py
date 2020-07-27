@@ -56,6 +56,7 @@ def lookup_song(track_id):
     liked_song = PICKLED_DF[PICKLED_DF['track_id'] == track_id]
     return(liked_song)
 
+
 # @api_routes.route('/send', methods = ["POST"])
 @api_routes.route('/send')
 # @cross_origin()
@@ -85,4 +86,4 @@ def process_json():
 
 @api_routes.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return sent_track_id
