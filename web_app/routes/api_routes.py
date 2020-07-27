@@ -6,12 +6,12 @@ import joblib
 import os
 import requests
 
-# # *************************************************************************** #
-# # Activating CORS
-# app = Flask(__name__)
-# app.config['CORS_HEADERS'] = 'Content-Type'
-# cors = CORS(app)
-# # *************************************************************************** #
+# *************************************************************************** #
+# Activating CORS
+app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
+cors = CORS(app)
+# *************************************************************************** #
 
 api_routes = Blueprint("api_routes", __name__)
 
@@ -86,9 +86,9 @@ def deliver(song_list):
     return recommended_track_ids
 
 
-# @api_routes.route('/send', methods = ["POST"])
-# @cross_origin()
-@api_routes.route('/send')
+@api_routes.route('/send', methods = ["POST"])
+@cross_origin()
+# @api_routes.route('/send')
 def process_json():
     sent_track_id = '3J2Jpw61sO7l6Hc7qdYV91'
     print('Fetching payload')
@@ -110,12 +110,12 @@ def process_json():
     print('----------')
     print('Sending JSON')
 
-    # response = app.response_class(
-    #     json.dumps(del_payload, sort_keys=False, indent=4),
-    #     mimetype=app.config['JSONIFY_MIMETYPE']
-    # )
-    # return response
-    return f'{del_payload}'
+    response = app.response_class(
+        json.dumps(del_payload, sort_keys=False, indent=4),
+        mimetype=app.config['JSONIFY_MIMETYPE']
+    )
+    return response
+    # return f'{del_payload}'
 
 @api_routes.route('/')
 def hello_world():
