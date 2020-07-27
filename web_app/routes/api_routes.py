@@ -21,10 +21,10 @@ def safe_paths():
     Quick helper to make platform independant file paths
     Returns - (df, data)
     '''
-    model_path = os.path.join('..', 'data',
+    model_path = os.path.join('data',
                               'knn_pipeline.joblib')
 
-    df_path = os.path.join('..', 'data',
+    df_path = os.path.join('data',
                            'song_list.joblib')
 
     return (model_path, df_path)
@@ -37,8 +37,8 @@ def load_models():
     model_path, df_path = safe_paths()
 
     # load the model from disk
-    pickled_model = joblib.load('knn_pipeline.joblib')
-    pickled_df = joblib.load('song_list.joblib')
+    pickled_model = joblib.load(model_path)
+    pickled_df = joblib.load(df_path)
 
     return (pickled_model, pickled_df)
 
