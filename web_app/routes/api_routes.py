@@ -40,6 +40,18 @@ def load_models():
 
     return (pickled_model, pickled_df)
 
+def lookup_song(track_id):
+    """
+    Takes in a sent track_id and returns the song info from pickled df
+    :param track_id: track id from spotify db or relative
+    :return: row + song information related to sent track_id
+    """
+    liked_song = joblib.load('song_list.joblib')
+    liked_song = liked_song[liked_song['track_id'] == track_id]
+    return(liked_song)
+
+PICKLED_MODEL, PICKLED_DF = load_models()
+
 # @api_routes.route('/send', methods = ["POST"])
 @api_routes.route('/send')
 # @cross_origin()
@@ -48,6 +60,7 @@ def process_json():
     print('Fetching payload')
     # pyld = request.get_json()
     print(f'Payload: {sent_track_id}')
+    print(f'Pickled df: {PICKLED_DF}')
 
     # print('processig and recommending basd on payload')
     # preprocessed = clean_payload(pyld)
