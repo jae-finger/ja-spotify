@@ -81,7 +81,7 @@ def deliver(song_list):
         new_song = potential_songs.iloc[song]
         recommended_track_ids.append(new_song)
     recommended_track_ids = pd.DataFrame(recommended_track_ids)
-    recommended_track_ids = recommended_track_ids[['track_id']]
+    recommended_track_ids = recommended_track_ids[['artist_name', 'track_name']]
     recommended_track_ids =  recommended_track_ids.to_json(orient='records')
     return recommended_track_ids
 
