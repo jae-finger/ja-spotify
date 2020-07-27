@@ -1,10 +1,6 @@
 from flask import Flask
 from web_app.routes.api_routes import api_routes
 
-
-app = Flask(__name__)
-
-
 def create_app():
     """Instantiate Flask API."""
     app = Flask(__name__)

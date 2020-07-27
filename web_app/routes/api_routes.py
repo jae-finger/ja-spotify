@@ -4,6 +4,14 @@ from flask_cors import CORS, cross_origin
 import pandas as pd
 import joblib
 import os
+import requests
+
+# # *************************************************************************** #
+# # Activating CORS
+# app = Flask(__name__)
+# app.config['CORS_HEADERS'] = 'Content-Type'
+# cors = CORS(app)
+# # *************************************************************************** #
 
 api_routes = Blueprint("api_routes", __name__)
 
@@ -32,4 +40,30 @@ def load_models():
 
     return (pickled_model, pickled_df)
 
-@api_routes.route('/send', methods = ["POST"])
+# @api_routes.route('/send', methods = ["POST"])
+@api_routes.route('/send')
+# @cross_origin()
+def process_json():
+    sent_track_id = '3J2Jpw61sO7l6Hc7qdYV91'
+    print('Fetching payload')
+    # pyld = request.get_json()
+    print(f'Payload: {sent_track_id}')
+
+    # print('Preprocessing payload')
+    # preprocessed = clean_payload(pyld)
+    #
+    #
+    # print('Preparing response')
+    # clean_recs = clean_response(recs, pyld['UserID'])
+    #
+    # print('Sending response')
+    #
+    # response = app.response_class(
+    #     json.dumps(clean_recs, sort_keys=False, indent=4),
+    #     mimetype=app.config['JSONIFY_MIMETYPE']
+    # )
+    return sent_track_id
+
+@api_routes.route('/')
+def hello_world():
+    return 'Hello, World!'
