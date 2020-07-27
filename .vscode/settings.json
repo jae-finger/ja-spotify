@@ -1,3 +1,6 @@
 {
-    "python.pythonPath": "/Users/jonfinger/.local/share/virtualenvs/ja-spotify-LLT-clOu/bin/python"
+    "python.pythonPath": "/Users/jonfinger/.local/share/virtualenvs/ja-spotify-LLT-clOu/bin/python",
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }

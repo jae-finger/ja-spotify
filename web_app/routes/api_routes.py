@@ -65,12 +65,10 @@ def process_json():
     print('Fetching payload')
     # pyld = request.get_json()
     print(f'Payload: {sent_track_id}')
-    print(f'Pickled df: {PICKLED_DF}')
 
-    # print('processing and recommending basd on payload')
-    # wanted_song = lookup_song(sent_track_id)
-    # print(wanted_song)
-    # preprocessed = clean_payload(pyld)
+    print('processing and recommending basd on payload')
+    wanted_song = lookup_song(sent_track_id)
+    print(wanted_song)
     #
     #
     # print('Preparing response')
@@ -83,8 +81,8 @@ def process_json():
     #     mimetype=app.config['JSONIFY_MIMETYPE']
     # )
     # return sent_track_id
-    return f'{PICKLED_DF}'
+    return f'{wanted_song}'
 
 @api_routes.route('/')
 def hello_world():
-    return sent_track_id
+    return 'hellllllllllo world'
