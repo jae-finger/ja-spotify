@@ -21,7 +21,7 @@ def safe_paths():
     Quick helper to make platform independant file paths
     Returns - (df, data)
     '''
-    model_path = os.path.join('..', ''data',
+    model_path = os.path.join('..', 'data',
                               'knn_pipeline.joblib')
 
     df_path = os.path.join('..', 'data',
