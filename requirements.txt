@@ -30,7 +30,7 @@ MarkupSafe==1.1.1
 mccabe==0.6.1
 mock==4.0.2
 murmurhash==1.0.2
-numpy==1.18.4
+numpy==1.22.0
 pandas==1.0.3
 parso==0.7.0
 patsy==0.5.1
